@@ -35,7 +35,7 @@
 
 **Files:** none in the repository. Keep ids and hosts in your password manager, never in the repo.
 
-- [ ] **Step 1: GitHub.** Create the public repository `skillassert`, empty (no README, licence or gitignore).
+- [x] **Step 1: GitHub.** Create the public repository `skillassert`, empty (no README, licence or gitignore).
 - [ ] **Step 2: Cloudflare zone.** Add `skillassert.com` on the Free plan; copy the two assigned nameservers; at Porkbun replace the authoritative nameservers with them. Verify: `dig NS skillassert.com +short` lists `*.ns.cloudflare.com` (allow up to a day).
 - [ ] **Step 3: Cloudflare token.** Create an API token from the "Edit Cloudflare Workers" template; note the Account ID from the dashboard sidebar.
 - [ ] **Step 4: Supabase.** Create an organization and the project `skillassert` in Frankfurt (`eu-central-1`); store the database password; copy the project URL, anon key and project ref from Project Settings; create a personal access token under Account > Access Tokens for CI.
@@ -73,7 +73,7 @@ it('renders the product name in the header', async () => {
 - [x] **Step 9: Bring the planning workspace into the repository.** `mkdir -p docs && cp -R ~/.claude/skillassert docs/planning`; move `docs/planning/GLOSSARY.md` to the repo root and `docs/planning/docs/adr` to `docs/adr`; delete `docs/planning/docs`; in `docs/planning/README.md`, `plan.md` and `plans/*.md` replace every `~/.claude/skillassert/` with `docs/planning/`. Replace `~/.claude/skillassert/README.md` on this Mac with three lines pointing at the repository, so there is one source of truth.
 - [x] **Step 10: Agent instructions for every tool.** Create `AGENTS.md` at the repo root: the module map and Nx tag rules (design section 5), the learner-path rule (section 4), Conventional Commits, test first, pull before starting and read the next unchecked step in `docs/planning/plans/`, one branch per task, append a journal entry to `docs/planning/journal.md` at the end of every session (date, machine and tool, what was done, next step, gotchas). Create `CLAUDE.md` containing only `@AGENTS.md`. Codex reads `AGENTS.md` natively.
 - [x] **Step 11: Cross-platform hygiene.** `.gitattributes` with `* text=auto eol=lf`; `.editorconfig` already generated; `.nvmrc` present.
-- [ ] **Step 12: Engines and first commit.** Add `"engines": { "node": ">=22.12" }` to `package.json`. `git add -A && git commit --amend -m "chore(workspace): create nx workspace with the angular web app and planning docs"` (the generator's initial commit), then `git remote add origin git@github.com:<owner>/skillassert.git && git push -u origin main`. This is the only direct push to `main`.
+- [x] **Step 12: Engines and first commit.** Add `"engines": { "node": ">=22.12" }` to `package.json`. `git add -A && git commit --amend -m "chore(workspace): create nx workspace with the angular web app and planning docs"` (the generator's initial commit), then `git remote add origin git@github.com:<owner>/skillassert.git && git push -u origin main`. This is the only direct push to `main`.
 
 ---
 
